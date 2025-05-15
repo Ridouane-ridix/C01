@@ -1,9 +1,10 @@
 #!/bin/bash
 # Demande à l'utilisateur de saisir le nom du dossier
 read Myfolder
-# Affiche le nom du dossier
-echo "$Myfolder"
 #comptage des fichiers
-count=$(ls -1 "$Myfolder" | wc -l)
+count=$(ls "$Myfolder" | wc -l)
 # Affiche le résultat
-echo "Le dossier $Myfolder contient $count fichier(s)."
+if [ "$count" ]; then
+  #Affichage du nombre de fichies dans le dossier saisi
+  echo "Le dossier $Myfolder contient $count fichier(s)."
+fi
